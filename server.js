@@ -13,6 +13,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //To connect using a driver via the standard MongoDB URI
 var url = 'mongodb://htata31:tata1994@ds135993.mlab.com:35993/htata';
 
+
+app.get('/', function(req, res) {
+    res.render('/public/html/homepage.html');
+})
+
 //In the below "get method" the input is lat and long.
 //Parsing the data from the mlab(database) maintaing 2 different arrays for names address.
 //The miles are calculated in this "getDistanceFromLatLonInMiles" method.
@@ -90,9 +95,7 @@ function deg2rad(deg) {
     return deg * (Math.PI/180)
 }
 
-app.get('/', function(req, res) {
-    res.render('/public/html/homepage.html');
-})
+
 
 var server = app.listen(8081,function () {
     var host = server.address().address
