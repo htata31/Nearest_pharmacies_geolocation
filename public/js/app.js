@@ -33,7 +33,7 @@ myapp.controller('homeController',function($scope,$http){
         var name, address, miles , values;
         $scope.row=[];
         console.log(typeof(lat));
-        $http.get('https://rxsavings.herokuapp.com/getData?keywords='+lat_long).then(function(d)
+        $http.get('rxsavings.herokuapp.com/getData?keywords='+lat_long).then(function(d)
             {
                 console.log("entered");
                 if(d.data.length === 0)
