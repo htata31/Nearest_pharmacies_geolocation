@@ -7,8 +7,6 @@ var app = express();
 var request=require("request");
 
 app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,7 +16,7 @@ var url = 'mongodb://htata31:tata1994@ds135993.mlab.com:35993/htata';
 
 
 app.get('/', function(req, res) {
-    res.render('/html/homepage.html');
+    res.render('index.html');
 });
 
 //In the below "get method" the input is lat and long.
