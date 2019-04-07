@@ -90,6 +90,10 @@ function deg2rad(deg) {
     return deg * (Math.PI/180)
 }
 
+app.get('/', function(req, res) {
+    res.render('/html/homepage.html');
+})
+
 var server = app.listen(8081,function () {
     var host = server.address().address
     var port = server.address().port
