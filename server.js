@@ -6,6 +6,8 @@ var cors = require('cors');
 var app = express();
 var request=require("request");
 
+var port = process.env.PORT || 8080;
+
 app.use(express.static(__dirname + '/public'));
 app.use(cors());
 app.use(bodyParser.json());
@@ -97,8 +99,7 @@ function deg2rad(deg) {
 }
 
 
-
-var server = app.listen(8081,function () {
+var server = app.listen(port,function () {
     var host = server.address().address
     var port = server.address().port
     console.log("Example app listening at http://%s:%s", host, port)
