@@ -91,7 +91,7 @@ function deg2rad(deg) {
 }
 
 app.get('/', function(req, res) {
-    res.render('/html/homepage.html');
+    res.render('/public/html/homepage.html');
 })
 
 var server = app.listen(8081,function () {
