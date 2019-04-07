@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js" type="application/javascript"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<style>
+    .bg-img {
+        /* The image used */
+        background-image:url("/images/pharma.jpg");
+        min-height: 380px;
+        /* Center and scale the image nicely */
+        /*background-position: center;*/
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+</style>
+<body class="bg-img" ng-app="homepage"  ng-controller="homeController">
+<div>
+    <br><br>
+    <br><br>
+    <b><p style="position: relative;left:37%;font-size:25px;">Find your nearest Pharmacies</p></b>
+    <br><br>
+</div>
+<div style="position:relative;top: 10%;left: 22%;" class="form-group">
+
+    <label style="font-size:20px">Latitude</label>
+    &nbsp;
+    <input type="number" id="lat" placeholder="Type Latitude" required="required" >
+    &nbsp;&nbsp;&nbsp;
+    <label style="font-size:20px">Longitude</label>
+    &nbsp;
+    <input type="number" id="long" placeholder="Type Longitude" required="required" >
+    &nbsp;&nbsp;
+    <button id="btn" class="btn btn-primary" value="Click Here" ng-click="sendDetails()">Click Here!</button>
+</div>
+<div id="table" class="table table-striped" style="position:relative;visibility: hidden;">
+    <table style="color: black" id="weather" class="table table-striped" border="3">
+        <tr >
+            <th>Name</th>
+            <th>Address</th>
+            <th>Miles(From given geo location)</th>
+        </tr>
+        <tr ng-repeat="x in row">
+            <td>{{x.substring(0,x.indexOf('&&'))}}</td>
+            <td>{{x.substring(x.indexOf('&&')+2,x.indexOf('^^'))}}</td>
+            <td>{{x.substring(x.indexOf('^^')+2,x.length)}}</td>
+        </tr>
+    </table>
+</div>
+</body>
+<script src="../js/app.js"></script>
+</html>

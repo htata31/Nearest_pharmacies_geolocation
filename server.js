@@ -18,7 +18,7 @@ var url = 'mongodb://htata31:tata1994@ds135993.mlab.com:35993/htata';
 
 
 app.get('/', function(req, res) {
-    res.render('/html/homepage.html');
+    res.render('index.html');
 });
 
 //In the below "get method" the input is lat and long.
